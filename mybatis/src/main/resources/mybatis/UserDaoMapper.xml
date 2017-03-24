@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 指定工作空间，要与接口名相同，源代码没有去看，猜测应该是通过"这里的namespace.下边方法的id"来定位方法的 -->
+<mapper namespace="com.yonyou.mybatis.dao.UserDao">
+    <!-- 指定字段映射
+    <resultMap type="Admin" id="adminResultMap">
+        <id property="id"  column="id" jdbcType="INTEGER" />
+        <result property="username" column="username" jdbcType="VARCHAR" />
+        <result property="password" column="password" jdbcType="VARCHAR" />
+    </resultMap>-->
+
+    <select id="selectById" resultType="com.yonyou.mybatis.entity.User" parameterType="String">
+     select * from user where id  = #{id}
+    </select>
+
+
+
+</mapper>
